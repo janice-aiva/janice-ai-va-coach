@@ -150,12 +150,14 @@ const App = () => {
     setShowDonate(false);
   };
 
-  const buildConversationHistory = (messageList) => {
-    return messageList.map((msg) => ({
+ const buildConversationHistory = (messageList) => {
+  return messageList
+    .filter((msg, index) => !(index === 0 && msg.role === 'bot'))
+    .map((msg) => ({
       role: msg.role === 'user' ? 'user' : 'model',
       parts: [{ text: msg.text }],
     }));
-  };
+};
 
   const fetchWithRetry = async (conversationHistory, retries = 3, delay = 1000) => {
     try {
@@ -176,10 +178,11 @@ const App = () => {
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => null);
-        const message =
-          errorData?.error?.message ||
-          'Janice AI is busy helping other VAs right now. Subukan po natin ulit in a few seconds!';
-        throw new Error(message);
+       const message =
+  errorData?.error?.message ||
+  'Something went wrong while contacting Gemini. Please try again.';
+console.error('Gemini API error:', errorData || response.status);
+throw new Error(message);
       }
 
       const data = await response.json();
