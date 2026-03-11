@@ -500,7 +500,6 @@ throw new Error(message);
               <Send size={22} />
             </button>
           </form>
-// redeploy trigger
           <div className="mt-6 flex justify-between items-center gap-4">
             <p className="text-xs text-slate-400 italic font-medium">
               Empowering Filipino Virtual Assistants through AI and Mentorship.
