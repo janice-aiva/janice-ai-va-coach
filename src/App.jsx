@@ -295,7 +295,7 @@ throw new Error(message);
                 <p className="text-[11px] uppercase font-bold text-white/60 leading-none mb-2">
                   GCash Number
                 </p>
-                <p className="font-mono text-xl font-black text-white tracking-wider">
+                <p className="font-mono text-xl font-black text-yellow-300 tracking-wider drop-shadow-md">
                   +63 995 521 2679
                 </p>
               </div>
@@ -450,7 +450,7 @@ throw new Error(message);
                 <p className="text-xs uppercase font-bold text-slate-400 tracking-widest mb-2">
                   GCash Number
                 </p>
-                <p className="text-3xl font-mono font-black text-purple-600 tracking-wider">
+                <p className="text-3xl font-mono font-black text-purple-300 tracking-wider">
                   +63 995 521 2679
                 </p>
               </div>
