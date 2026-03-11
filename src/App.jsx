@@ -234,7 +234,7 @@ throw new Error(message);
   return (
     <div className="min-h-screen bg-[#FBFBFB] flex flex-col md:flex-row font-sans text-[#1F2933]">
       {/* Left Column */}
-      <section className="w-full md:w-[40%] bg-gradient-to-br from-[#FF69B4] via-[#9370DB] to-[#8A2BE2] text-white p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
+      <section className="w-full md:w-[30%] bg-gradient-to-br from-[#FF69B4] via-[#9370DB] to-[#8A2BE2] text-white p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
         <div className="absolute top-[-10%] right-[-10%] w-80 h-80 bg-white/20 rounded-full blur-3xl"></div>
 
         <div className="relative z-10">
@@ -324,7 +324,7 @@ throw new Error(message);
       </section>
 
       {/* Right Column */}
-      <section className="relative w-full md:w-[60%] flex flex-col bg-white h-[600px] md:h-screen shadow-2xl">
+      <section className="relative w-full md:w-[70%] flex flex-col bg-white h-screen shadow-2xl">
         <header className="px-8 py-6 border-b border-slate-100 flex items-center justify-between bg-white/80 backdrop-blur-md sticky top-0 z-20">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600">
