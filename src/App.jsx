@@ -258,8 +258,8 @@ throw new Error(message);
 
   return (
     <div className="min-h-screen bg-[#FBFBFB] flex flex-col md:flex-row font-sans text-[#1F2933]">
-      {/* Left Column */}
-      <section className="w-full md:w-[30%] bg-gradient-to-br from-[#FF69B4] via-[#9370DB] to-[#8A2BE2] text-white p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
+  {/* Left Column */}
+  <section className="w-full md:w-[30%] bg-gradient-to-br from-[#FF69B4] via-[#9370DB] to-[#8A2BE2] text-white p-6 sm:p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
         <div className="absolute top-[-10%] right-[-10%] w-80 h-80 bg-white/20 rounded-full blur-3xl"></div>
 
         <div className="relative z-10">
@@ -349,7 +349,7 @@ throw new Error(message);
       </section>
 
       {/* Right Column */}
-      <section className="relative w-full md:w-[70%] flex flex-col bg-white h-screen shadow-2xl">
+      <section className="relative w-full md:w-[70%] flex flex-col bg-white md:h-screen shadow-2xl">
         <header className="px-8 py-6 border-b border-slate-100 flex items-center justify-between bg-white/80 backdrop-blur-md sticky top-0 z-20">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600">
@@ -387,7 +387,7 @@ throw new Error(message);
           </div>
         </header>
 
-        <div className="flex-1 overflow-y-auto p-8 space-y-8 bg-[#FBFBFB]">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8 space-y-6 md:space-y-8 bg-[#FBFBFB]">
           {messages.map((msg, idx) => (
             <div
               key={idx}
@@ -490,13 +490,14 @@ throw new Error(message);
           </div>
         )}
 
-        <div className="p-8 bg-white border-t border-slate-100">
-          <div className="flex flex-wrap gap-3 mb-6">
+        {/* Footer: presets + input */}
+        <div className="p-4 sm:p-6 md:p-8 bg-white border-t border-slate-100">
+          <div className="flex flex-wrap gap-3 mb-6 justify-center">
             {presetButtons.map((btn, i) => (
               <button
                 key={i}
                 onClick={() => sendPresetMessage(btn.label)}
-                className="flex items-center gap-2.5 px-5 py-3 bg-white hover:bg-purple-50 border border-slate-200 hover:border-purple-300 text-[#4A5568] hover:text-purple-700 rounded-xl text-sm font-bold transition-all shadow-sm"
+                className="flex items-center gap-2.5 px-4 py-2.5 sm:px-5 sm:py-3 bg-white hover:bg-purple-50 border border-slate-200 hover:border-purple-300 text-[#4A5568] hover:text-purple-700 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-sm"
               >
                 {btn.icon}
                 {btn.label}
@@ -504,27 +505,28 @@ throw new Error(message);
             ))}
           </div>
 
-          <form onSubmit={handleSend} className="relative group">
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask your coach (e.g., Paano po mag-start?)"
-              className="w-full pl-6 pr-16 py-5 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-purple-500/5 focus:border-purple-400 transition-all outline-none text-[#111827] text-base placeholder:text-slate-400"
-              disabled={isLoading}
-            />
-            <button
-              type="submit"
-              disabled={isLoading || !input.trim()}
-              className={`absolute right-3 top-1/2 -translate-y-1/2 p-4 rounded-xl transition-all ${
-                input.trim() && !isLoading
-                  ? 'bg-purple-600 text-white shadow-lg hover:bg-purple-700 scale-100 active:scale-95'
-                  : 'bg-slate-200 text-slate-400'
-              }`}
-            >
-              <Send size={22} />
-            </button>
-          </form>
+         <form onSubmit={handleSend} className="relative group">
+  <input
+    type="text"
+    value={input}
+    onChange={(e) => setInput(e.target.value)}
+    placeholder="Ask your coach (e.g., Paano po mag-start?)"
+    className="w-full pl-4 pr-14 sm:pl-6 sm:pr-16 py-4 sm:py-5 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-purple-500/5 focus:border-purple-400 transition-all outline-none text-[#111827] text-sm sm:text-base placeholder:text-slate-400"
+    disabled={isLoading}
+  />
+  <button
+    type="submit"
+    disabled={isLoading || !input.trim()}
+    className={`absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 p-3 sm:p-4 rounded-xl transition-all ${
+      input.trim() && !isLoading
+        ? 'bg-purple-600 text-white shadow-lg hover:bg-purple-700 scale-100 active:scale-95'
+        : 'bg-slate-200 text-slate-400'
+    }`}
+  >
+    <Send size={22} />
+  </button>
+</form>
+
           <div className="mt-6 flex justify-between items-center gap-4">
             <p className="text-xs text-slate-400 italic font-medium">
               Empowering Filipino Virtual Assistants through AI and Mentorship.
