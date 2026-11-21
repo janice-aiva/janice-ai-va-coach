@@ -257,10 +257,10 @@ throw new Error(message);
   };
 
   return (
-    <div className="min-h-screen bg-[#FBFBFB] flex flex-col md:flex-row font-sans text-[#1F2933]">
+    <div className="min-h-screen bg-[#FAF8F5] flex flex-col md:flex-row font-sans text-[#213B31]">
   {/* Left Column */}
-  <section className="w-full md:w-[30%] bg-gradient-to-br from-[#FF69B4] via-[#9370DB] to-[#8A2BE2] text-white p-6 sm:p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
-        <div className="absolute top-[-10%] right-[-10%] w-80 h-80 bg-white/20 rounded-full blur-3xl"></div>
+  <section className="w-full md:w-[30%] bg-[#213B31] text-white p-6 sm:p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
+        <div className="absolute top-[-10%] right-[-10%] w-80 h-80 bg-[#C8A97E]/10 rounded-full blur-3xl"></div>
 
         <div className="relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/20 border border-white/30 rounded-full text-[12px] tracking-widest uppercase mb-8 text-white font-bold">
@@ -320,7 +320,7 @@ throw new Error(message);
                 <p className="text-[11px] uppercase font-bold text-white/60 leading-none mb-2">
                   GCash Number
                 </p>
-                <p className="font-mono text-xl font-black text-yellow-300 tracking-wider drop-shadow-md">
+                <p className="font-mono text-xl font-black text-[#E8C98E] tracking-wider drop-shadow-md">
                   +63 995 521 2679
                 </p>
               </div>
@@ -349,16 +349,16 @@ throw new Error(message);
       </section>
 
       {/* Right Column */}
-      <section className="relative w-full md:w-[70%] flex flex-col bg-white md:h-screen shadow-2xl">
-        <header className="px-8 py-6 border-b border-slate-100 flex items-center justify-between bg-white/80 backdrop-blur-md sticky top-0 z-20">
+      <section className="relative w-full md:w-[70%] flex flex-col bg-[#FAF8F5] md:h-screen shadow-2xl">
+        <header className="px-8 py-6 border-b border-[#E9E4DC] flex items-center justify-between bg-[#FAF8F5]/90 backdrop-blur-md sticky top-0 z-20">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600">
+            <div className="w-12 h-12 rounded-xl bg-[#F3EFE8] flex items-center justify-center text-[#213B31]">
               <MessageSquare size={24} />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-[#111827]">Janice AI Session</h2>
-              <p className="text-[11px] text-purple-600 font-bold uppercase tracking-wider flex items-center gap-1.5">
-                <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
+              <h2 className="text-lg font-bold text-[#213B31]">Janice AI Session</h2>
+              <p className="text-[11px] text-[#213B31] font-bold uppercase tracking-wider flex items-center gap-1.5">
+                <span className="w-2 h-2 bg-[#F3EFE8]0 rounded-full animate-pulse"></span>
                 Active Mentorship
               </p>
             </div>
@@ -367,7 +367,7 @@ throw new Error(message);
           <div className="flex items-center gap-2">
             <button
               onClick={resetChat}
-              className="text-slate-400 hover:text-purple-600 transition-colors p-2 rounded-lg hover:bg-purple-50 relative group"
+              className="text-slate-400 hover:text-[#213B31] transition-colors p-2 rounded-lg hover:bg-[#F3EFE8] relative group"
               aria-label="Start new chat"
               title="Start new chat"
             >
@@ -376,18 +376,18 @@ throw new Error(message);
 
             <button
               onClick={() => setShowDonate(!showDonate)}
-              className="text-slate-400 hover:text-purple-600 transition-colors p-2 rounded-lg hover:bg-purple-50 relative group"
+              className="text-slate-400 hover:text-[#213B31] transition-colors p-2 rounded-lg hover:bg-[#F3EFE8] relative group"
               aria-label="Support Janice"
             >
-              <Heart size={24} className={showDonate ? 'fill-purple-500 text-purple-500' : ''} />
-              <span className="absolute right-full mr-2 top-1/2 -translate-y-1/2 bg-[#111827] text-white text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+              <Heart size={24} className={showDonate ? 'fill-[#C8A97E] text-[#A98247]' : ''} />
+              <span className="absolute right-full mr-2 top-1/2 -translate-y-1/2 bg-[#213B31] text-white text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
                 Support Janice
               </span>
             </button>
           </div>
         </header>
 
-        <div className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8 space-y-6 md:space-y-8 bg-[#FBFBFB]">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8 space-y-6 md:space-y-8 bg-[#FAF8F5]">
           {messages.map((msg, idx) => (
             <div
               key={idx}
@@ -403,8 +403,8 @@ throw new Error(message);
                 <div
                   className={`w-10 h-10 rounded-xl flex-shrink-0 flex items-center justify-center mt-1 shadow-sm border ${
                     msg.role === 'user'
-                      ? 'bg-purple-600 text-white border-purple-600'
-                      : 'bg-white text-purple-600 border-purple-100'
+                      ? 'bg-[#213B31] text-white border-[#213B31]'
+                      : 'bg-white text-[#213B31] border-[#E6DFD3]'
                   }`}
                 >
                   {msg.role === 'user' ? <User size={20} /> : <Sparkles size={20} />}
@@ -413,10 +413,10 @@ throw new Error(message);
                 <div
                   className={`p-6 rounded-2xl leading-relaxed text-base shadow-sm ${
                     msg.role === 'user'
-                      ? 'bg-purple-600 text-white rounded-tr-none whitespace-pre-wrap'
+                      ? 'bg-[#213B31] text-white rounded-tr-none whitespace-pre-wrap'
                       : idx === 0
-                      ? 'bg-gradient-to-br from-purple-500 to-fuchsia-500 text-white border-none rounded-tl-none font-medium whitespace-pre-wrap'
-                      : 'bg-white text-[#1F2933] border border-slate-100 rounded-tl-none whitespace-pre-wrap'
+                      ? 'bg-gradient-to-br from-[#213B31] to-[#365748] text-white border-none rounded-tl-none font-medium whitespace-pre-wrap'
+                      : 'bg-white text-[#213B31] border border-[#E9E4DC] rounded-tl-none whitespace-pre-wrap'
                   }`}
                 >
                   {msg.text}
@@ -428,13 +428,13 @@ throw new Error(message);
           {isLoading && (
             <div className="flex justify-start">
               <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-xl bg-white border border-purple-100 text-purple-600 flex items-center justify-center shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-white border border-[#E6DFD3] text-[#213B31] flex items-center justify-center shadow-sm">
                   <Sparkles size={20} className="animate-spin" />
                 </div>
-                <div className="bg-white p-6 rounded-2xl rounded-tl-none border border-slate-100 flex gap-2 items-center shadow-sm">
-                  <span className="w-2 h-2 bg-purple-400 rounded-full animate-bounce"></span>
-                  <span className="w-2 h-2 bg-purple-400 rounded-full animate-bounce [animation-delay:0.2s]"></span>
-                  <span className="w-2 h-2 bg-purple-400 rounded-full animate-bounce [animation-delay:0.4s]"></span>
+                <div className="bg-white p-6 rounded-2xl rounded-tl-none border border-[#E9E4DC] flex gap-2 items-center shadow-sm">
+                  <span className="w-2 h-2 bg-[#C8A97E] rounded-full animate-bounce"></span>
+                  <span className="w-2 h-2 bg-[#C8A97E] rounded-full animate-bounce [animation-delay:0.2s]"></span>
+                  <span className="w-2 h-2 bg-[#C8A97E] rounded-full animate-bounce [animation-delay:0.4s]"></span>
                 </div>
               </div>
             </div>
@@ -451,11 +451,11 @@ throw new Error(message);
 
         {/* Support Modal */}
         {showDonate && (
-          <div className="absolute inset-0 z-30 bg-white/60 backdrop-blur-sm flex items-end md:items-center justify-center p-4 animate-in fade-in duration-200">
-            <div className="bg-white w-full max-w-sm rounded-3xl shadow-2xl border border-slate-100 p-8 transform animate-in slide-in-from-bottom-8">
+          <div className="absolute inset-0 z-30 bg-[#FAF8F5]/70 backdrop-blur-sm flex items-end md:items-center justify-center p-4 animate-in fade-in duration-200">
+            <div className="bg-[#FAF8F5] w-full max-w-sm rounded-3xl shadow-2xl border border-[#E9E4DC] p-8 transform animate-in slide-in-from-bottom-8">
               <div className="flex justify-between items-start mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-pink-100 flex items-center justify-center text-pink-600">
-                  <Heart className="fill-pink-500" size={28} />
+                <div className="w-14 h-14 rounded-2xl bg-[#F3EFE8] flex items-center justify-center text-[#A98247]">
+                  <Heart className="fill-[#C8A97E]" size={28} />
                 </div>
                 <button
                   onClick={() => setShowDonate(false)}
@@ -465,24 +465,24 @@ throw new Error(message);
                 </button>
               </div>
 
-              <h3 className="text-2xl font-bold text-[#111827] mb-3">Suportahan si Janice</h3>
+              <h3 className="text-2xl font-bold text-[#213B31] mb-3">Suportahan si Janice</h3>
               <p className="text-slate-500 text-base mb-6 leading-relaxed">
                 Tulungan niyo po kaming i-maintain ang server at AI costs para manatiling
                 libre ang tool na ito para sa lahat ng Pinoy VAs.
               </p>
 
-              <div className="bg-slate-50 rounded-2xl p-6 mb-6 border border-slate-100 text-center">
+              <div className="bg-[#FAF8F5] rounded-2xl p-6 mb-6 border border-[#E9E4DC] text-center">
                 <p className="text-xs uppercase font-bold text-slate-400 tracking-widest mb-2">
                   GCash Number
                 </p>
-                <p className="text-3xl font-mono font-black text-purple-300 tracking-wider">
+                <p className="text-3xl font-mono font-black text-[#A98247] tracking-wider">
                   +63 995 521 2679
                 </p>
               </div>
 
               <button
                 onClick={() => setShowDonate(false)}
-                className="w-full py-5 bg-[#111827] text-white rounded-2xl font-bold text-lg hover:bg-black transition-all"
+                className="w-full py-5 bg-[#213B31] text-white rounded-2xl font-bold text-lg hover:bg-[#172C24] transition-all"
               >
                 Done / Close
               </button>
@@ -491,13 +491,13 @@ throw new Error(message);
         )}
 
         {/* Footer: presets + input */}
-        <div className="p-4 sm:p-6 md:p-8 bg-white border-t border-slate-100">
+        <div className="p-4 sm:p-6 md:p-8 bg-[#FAF8F5] border-t border-[#E9E4DC]">
           <div className="flex flex-wrap gap-3 mb-6 justify-center">
             {presetButtons.map((btn, i) => (
               <button
                 key={i}
                 onClick={() => sendPresetMessage(btn.label)}
-                className="flex items-center gap-2.5 px-4 py-2.5 sm:px-5 sm:py-3 bg-white hover:bg-purple-50 border border-slate-200 hover:border-purple-300 text-[#4A5568] hover:text-purple-700 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-sm"
+                className="flex items-center gap-2.5 px-4 py-2.5 sm:px-5 sm:py-3 bg-white hover:bg-[#F3EFE8] border border-[#E3DDD2] hover:border-[#C8A97E] text-[#4A5568] hover:text-[#172C24] rounded-xl text-xs sm:text-sm font-bold transition-all shadow-sm"
               >
                 {btn.icon}
                 {btn.label}
@@ -511,7 +511,7 @@ throw new Error(message);
     value={input}
     onChange={(e) => setInput(e.target.value)}
     placeholder="Ask your coach (e.g., Paano po mag-start?)"
-    className="w-full pl-4 pr-14 sm:pl-6 sm:pr-16 py-4 sm:py-5 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-purple-500/5 focus:border-purple-400 transition-all outline-none text-[#111827] text-sm sm:text-base placeholder:text-slate-400"
+    className="w-full pl-4 pr-14 sm:pl-6 sm:pr-16 py-4 sm:py-5 bg-[#FAF8F5] border border-[#E3DDD2] rounded-2xl focus:ring-4 focus:ring-[#C8A97E]/20 focus:border-[#C8A97E] transition-all outline-none text-[#213B31] text-sm sm:text-base placeholder:text-slate-400"
     disabled={isLoading}
   />
   <button
@@ -519,7 +519,7 @@ throw new Error(message);
     disabled={isLoading || !input.trim()}
     className={`absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 p-3 sm:p-4 rounded-xl transition-all ${
       input.trim() && !isLoading
-        ? 'bg-purple-600 text-white shadow-lg hover:bg-purple-700 scale-100 active:scale-95'
+        ? 'bg-[#213B31] text-white shadow-lg hover:bg-[#172C24] scale-100 active:scale-95'
         : 'bg-slate-200 text-slate-400'
     }`}
   >
@@ -533,7 +533,7 @@ throw new Error(message);
             </p>
             <button
               onClick={resetChat}
-              className="text-xs font-semibold text-purple-600 hover:text-purple-700"
+              className="text-xs font-semibold text-[#213B31] hover:text-[#172C24]"
             >
               New chat
             </button>
