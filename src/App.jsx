@@ -257,9 +257,9 @@ throw new Error(message);
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] flex flex-col md:flex-row font-sans text-[#213B31]">
+    <div className="min-h-screen md:h-screen md:overflow-hidden bg-[#FAF8F5] flex flex-col md:flex-row font-sans text-[#213B31]">
   {/* Left Column */}
-  <section className="w-full md:w-[30%] bg-[#213B31] text-white p-6 sm:p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
+  <section className="w-full md:w-[30%] bg-[#213B31] text-white p-6 sm:p-8 md:p-12 flex flex-col justify-between relative overflow-hidden md:overflow-y-auto md:h-full">
         <div className="absolute top-[-10%] right-[-10%] w-80 h-80 bg-[#C8A97E]/10 rounded-full blur-3xl"></div>
 
         <div className="relative z-10">
@@ -349,8 +349,8 @@ throw new Error(message);
       </section>
 
       {/* Right Column */}
-      <section className="relative w-full md:w-[70%] flex flex-col bg-[#FAF8F5] md:h-screen shadow-2xl">
-        <header className="px-8 py-6 border-b border-[#E9E4DC] flex items-center justify-between bg-[#FAF8F5]/90 backdrop-blur-md sticky top-0 z-20">
+      <section className="relative w-full md:w-[70%] flex flex-col bg-[#FAF8F5] min-h-[75vh] md:min-h-0 md:h-full shadow-2xl">
+        <header className="px-4 sm:px-8 py-4 sm:py-6 border-b border-[#E9E4DC] flex items-center justify-between bg-[#FAF8F5]/90 backdrop-blur-md sticky top-0 z-20">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-[#F3EFE8] flex items-center justify-center text-[#213B31]">
               <MessageSquare size={24} />
@@ -387,7 +387,7 @@ throw new Error(message);
           </div>
         </header>
 
-        <div className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8 space-y-6 md:space-y-8 bg-[#FAF8F5]">
+        <div className="flex-1 min-h-0 overflow-y-auto p-4 sm:p-6 md:p-8 space-y-6 md:space-y-8 bg-[#FAF8F5]">
           {messages.map((msg, idx) => (
             <div
               key={idx}
@@ -492,7 +492,7 @@ throw new Error(message);
 
         {/* Footer: presets + input */}
         <div className="p-4 sm:p-6 md:p-8 bg-[#FAF8F5] border-t border-[#E9E4DC]">
-          <div className="flex flex-wrap gap-3 mb-6 justify-center">
+          <div className="flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-6 justify-center">
             {presetButtons.map((btn, i) => (
               <button
                 key={i}
@@ -511,6 +511,7 @@ throw new Error(message);
     value={input}
     onChange={(e) => setInput(e.target.value)}
     placeholder="Ask your coach (e.g., Paano po mag-start?)"
+    aria-label="Message Janice AI VA Coach"
     className="w-full pl-4 pr-14 sm:pl-6 sm:pr-16 py-4 sm:py-5 bg-[#FAF8F5] border border-[#E3DDD2] rounded-2xl focus:ring-4 focus:ring-[#C8A97E]/20 focus:border-[#C8A97E] transition-all outline-none text-[#213B31] text-sm sm:text-base placeholder:text-slate-400"
     disabled={isLoading}
   />
@@ -528,7 +529,7 @@ throw new Error(message);
 </form>
 
           <div className="mt-6 flex justify-between items-center gap-4">
-            <p className="text-xs text-slate-400 italic font-medium">
+            <p className="text-xs text-[#526257] italic font-medium">
               Empowering Filipino Virtual Assistants through AI and Mentorship.
             </p>
             <button
